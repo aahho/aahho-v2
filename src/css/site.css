@@ -38,7 +38,7 @@ body {
 }
 .header-text ,.bottom-text{
     margin:0px;
-    font-size:1.5rem;
+    /* font-size:1.5rem; */
 }
 
 .img-container {
@@ -61,7 +61,6 @@ body {
 
 .abtn-home {
     cursor: pointer;
-    font-size:3rem;
 }
 
 .site-body>center {
@@ -70,9 +69,6 @@ body {
 
 .home-sections {
     font-weight: 900;
-}
-#tab-section{
-    border-right: 4px solid;
 }
 
 .home-sections>h1 {
@@ -93,7 +89,7 @@ body {
         width:100%;
         padding: 2rem;
     }
-    .home-mid-border {
+    .home-section-border {
         border-top: 4px solid;
         border-bottom: 4px solid;
     }
@@ -106,7 +102,7 @@ body {
         width:100%;
         padding: 2rem;
     }
-    .home-mid-border {
+    .home-section-border {
         border-top: 4px solid;
         border-bottom: 4px solid;
     }
@@ -119,9 +115,10 @@ body {
         width:100%;
         padding: 2rem;
     }
-    .home-mid-border {
-        border-left: 4px solid;
+    .home-section-border:not(:last-child) {
+        border-right: 4px solid;
     }
+    
 }
 
 /* Large Devices */
@@ -131,15 +128,8 @@ body {
         width:100%;
         padding: 2rem;
     }
-    .home-mid-border {
+    .home-section-border {
         border-right: 4px solid;
-    }
-    .abtn-home{
-
-        font-size:4rem;
-    }
-    body{
-        font-size:2rem;
     }
 }
 
@@ -155,15 +145,8 @@ body {
         width:100%;
         padding: 2rem;
     }
-    .home-mid-border {
+    .home-section-border {
         border-top: 4px solid;
         border-bottom: 4px solid;
-    }
-    .abtn-home{
-
-        font-size:4rem;
-    }
-    body{
-        font-size:2rem;
     }
 }
