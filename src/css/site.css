@@ -1,0 +1,169 @@
+@font-face {
+    font-family: 'futura_ltbold';
+    src: url('futuralt-bold-webfont.eot');
+    src: url('futuralt-bold-webfont.eot?#iefix') format('embedded-opentype'), url('futuralt-bold-webfont.woff') format('woff'), url('futuralt-bold-webfont.ttf') format('truetype'), url('futuralt-bold-webfont.svg#futura_ltbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'futura_ltbook';
+    src: url('futuralt-book-webfont.eot');
+    src: url('futuralt-book-webfont.eot?#iefix') format('embedded-opentype'), url('futuralt-book-webfont.woff') format('woff'), url('futuralt-book-webfont.ttf') format('truetype'), url('futuralt-book-webfont.svg#futura_ltbook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'futura_ltregular';
+    src: url('futuralt-webfont.eot');
+    src: url('futuralt-webfont.eot?#iefix') format('embedded-opentype'), url('futuralt-webfont.woff') format('woff'), url('futuralt-webfont.ttf') format('truetype'), url('futuralt-webfont.svg#futura_ltregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+    font-family: 'futura_ltregular';
+    font-weight: 700;
+    color: #777;
+    background: #f9f9f9;
+}
+
+.site-body {
+    padding: 12px 0;
+    opacity: 0;
+}
+.header-text ,.bottom-text{
+    margin:0px;
+    font-size:1.5rem;
+}
+
+.img-container {
+    position: fixed;
+    z-index:-1;
+    /* height: 100%;width:100%; */
+    background-image: url('../../src/img/5.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(4px);
+    overflow: hidden;
+    top: -12px;
+    left: -12px;
+    right: -12px;
+    bottom: -12px;
+    transition: all 1s ease;
+    animation-direction: normal;
+    opacity: 0.2;
+}
+
+.abtn-home {
+    cursor: pointer;
+    font-size:3rem;
+}
+
+.site-body>center {
+    padding: 12px;
+}
+
+.home-sections {
+    font-weight: 900;
+}
+#tab-section{
+    border-right: 4px solid;
+}
+
+.home-sections>h1 {
+    margin: 24px 12px;
+}
+
+.home-sections>form {
+    margin: 0 12px;
+}
+#emailHelp{
+    font-size:1rem;
+}
+
+/* Extra Small Devices */
+@media (max-width: 576px) {
+    .home-content {
+        /* height: 80%; */
+        width:100%;
+        padding: 2rem;
+    }
+    .home-mid-border {
+        border-top: 4px solid;
+        border-bottom: 4px solid;
+    }
+}
+
+/* Small Devices */
+@media (max-width: 767px){
+    .home-content {
+        /* height: 80%; */
+        width:100%;
+        padding: 2rem;
+    }
+    .home-mid-border {
+        border-top: 4px solid;
+        border-bottom: 4px solid;
+    }
+}
+
+/* Medium Devices */
+@media (min-width: 768px) and (max-width: 991px) {
+    .home-content {
+        /* height: 80%; */
+        width:100%;
+        padding: 2rem;
+    }
+    .home-mid-border {
+        border-left: 4px solid;
+    }
+}
+
+/* Large Devices */
+@media (min-width: 992px) and (orientation:landscape) { 
+    .home-content {
+        height: 80%;
+        width:100%;
+        padding: 2rem;
+    }
+    .home-mid-border {
+        border-right: 4px solid;
+    }
+    .abtn-home{
+
+        font-size:4rem;
+    }
+    body{
+        font-size:2rem;
+    }
+}
+
+/* Large Devices */
+@media (min-width: 992px) and (orientation:portrait) { 
+    .col-lg-4 {
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .home-content {
+        /* height: 80%; */
+        width:100%;
+        padding: 2rem;
+    }
+    .home-mid-border {
+        border-top: 4px solid;
+        border-bottom: 4px solid;
+    }
+    .abtn-home{
+
+        font-size:4rem;
+    }
+    body{
+        font-size:2rem;
+    }
+}
