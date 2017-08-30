@@ -6,11 +6,10 @@ $(document).ready(function () {
     $('.tab-link').on("click",function(){
     	console.log("work-link is clicked",$(this).text());
     	var section = 'details-' + $(this).text().toLowerCase();
-    	$('#details-section').hide( "drop", { direction: "down" }, "fast" );
+    	$('#modal-section').hide( "drop", { direction: "down" }, "fast" );
     	$('#details-work').hide( "drop", { direction: "down" }, "fast" );
     	$('#details-tools').hide( "drop", { direction: "down" }, "fast" );
     	$('#details-team').hide( "drop", { direction: "down" }, "fast" );
-    	$('#contact-section').hide( "drop", { direction: "down" }, "fast" );
 		$('#'+ section).show('scale',{ direction: "right" },400);
 
 	});
@@ -75,6 +74,24 @@ $(document).ready(function () {
     };
     firebase.initializeApp(config);
 
+    toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "newestOnTop": true,
+        "progressBar": false,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+      }
+
     const btnContact = document.getElementById('btnContact');
 
     firebase.auth().signInAnonymously().catch(function(error) {
@@ -82,7 +99,7 @@ $(document).ready(function () {
       var errorMessage = error.message;
 
       // @Himan @Tarun . Please Show this error message in proper way
-      alert('Failed to login. Please Try Again');
+      toastr["error"]("Failed to login. Please try again.");
     });
 
     firebase.auth().onAuthStateChanged(function(user) {

@@ -32,6 +32,10 @@ body {
     background: #f9f9f9;
 }
 
+footer {
+    background: #f9f9f9;
+}
+
 .site-body {
     padding: 12px 0;
     opacity: 0;
@@ -48,7 +52,7 @@ body {
 }
 
 .custom-modal {
-    height: 0px;
+    height: 100%;
     display: none;
 }
 
@@ -80,7 +84,6 @@ body {
 
 .home-sections {
     font-weight: 900;
-    min-height: 100%;
 }
 
 .home-sections>h1 {
@@ -102,39 +105,49 @@ body {
         padding: 2rem;
     }
     .home-section-border {
-        border-top: 4px solid;
+        /* border-top: 4px solid; */
         border-bottom: 4px solid;
+    }
+    .hidden-xs {
+        display: none;
     }
 }
 
 /* Small Devices */
-@media (max-width: 767px){
+@media (min-width: 577px) and (max-width: 767px){
     .home-content {
         /* height: 80%; */
         width:100%;
         padding: 2rem;
     }
     .home-section-border {
-        border-top: 4px solid;
+        /* border-top: 4px solid; */
         border-bottom: 4px solid;
+    }
+    .hidden-sm {
+        display: none;
     }
 }
 
 /* Medium Devices */
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 1199px) {
     .home-content {
-        /* height: 80%; */
+        height: 80%;
         width:100%;
         padding: 2rem;
     }
     .home-section-border:not(:last-of-type) {
         border-right: 4px solid;
     }
+
+    .hidden-md {
+        display: none;
+    }
     
 }
 
 /* Large Devices */
-@media (min-width: 992px) and (orientation:landscape) { 
+@media (min-width: 1200px) and (orientation:landscape) { 
     .home-content {
         height: 80%;
         width:100%;
@@ -143,10 +156,16 @@ body {
     .home-section-border {
         border-right: 4px solid;
     }
+    .home-sections {
+        min-height: 100%;
+    }
+    .hidden-lg-l {
+        display: none;
+    }
 }
 
 /* Large Devices */
-@media (min-width: 992px) and (orientation:portrait) { 
+@media (min-width: 1200px) and (orientation:portrait) { 
     .col-lg-4 {
         -ms-flex: 0 0 100%;
             flex: 0 0 100%;
@@ -160,5 +179,8 @@ body {
     .home-section-border {
         border-top: 4px solid;
         border-bottom: 4px solid;
+    }
+    .hidden-lg-p {
+        display: none;
     }
 }
