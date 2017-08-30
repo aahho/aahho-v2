@@ -16,6 +16,40 @@ $(document).ready(function () {
 	});
 	
 	$(".abtn-home").fitText();
+
+    //form validation
+    $('#contactName').keyup(function(){
+        var data = $(this).val();
+        console.log(data);
+        if(data.length > 2){
+            $(this).parent('div').removeClass('has-warning').addClass('has-success');
+        }
+        else{
+            $(this).parent('div').removeClass('has-success').addClass('has-warning');
+        }    
+    });
+    var pattern =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+
+    $('#contactEmail').keyup(function(e){
+        var data = $('#contactEmail').val().trim();
+        console.log(data);
+        if(data.match(pattern)){
+            $(this).parent('div').removeClass('has-warning').addClass('has-success');
+        }
+        else{
+            $(this).parent('div').removeClass('has-success').addClass('has-warning');
+        }    
+    });
+    $('#contactPhone').keyup(function(e){
+        var data = $('#contactPhone').val().trim();
+        console.log(data);
+        if(data.legth > 9){
+            $(this).parent('div').removeClass('has-warning').addClass('has-success');
+        }
+        else{
+            $(this).parent('div').removeClass('has-success').addClass('has-warning');
+        }    
+    });
 });
 
 /*global jQuery */
@@ -64,6 +98,7 @@ $(document).ready(function () {
 
 (function () {
 
+    var pattern =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
     // Initializing Firebase
     const config = {
         apiKey: "AIzaSyDXEqSlclCTKIMSvlyGvYTXd2v2Na1Hj8w",
@@ -107,13 +142,16 @@ $(document).ready(function () {
                 'contactEmail' : email,
                 'contactPhone' : phone
             }
-            console.log('object'+object);
-            const promise = ref.push(object);
-            promise.catch(e => console.log(e.message));
-            promise.then(function() {
-              window.location.reload();
-            })
-            console.log('created or pushed');
+            if(object.contactName.length > 2 && object.contactEmail.match(pattern) && object.contactPhone.length > 9){
+                console.log('object'+object);
+                const promise = ref.push(object);
+                promise.catch(e => console.log(e.message));
+                promise.then(function() {
+                  $('#contactModal').modal('toggle');  
+                  //window.location.reload();
+                })
+                console.log('created or pushed');
+            }
         });
     }
 }());

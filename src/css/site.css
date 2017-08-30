@@ -93,6 +93,32 @@ body {
 #emailHelp{
     font-size:1rem;
 }
+.form-control-feedback-success, .form-control-feedback-warning{
+    display:none;
+}
+/* form validation*/
+.has-success .form-control-input{
+    border:1px solid green;
+}
+.has-success .form-control-feedback-success{
+    color:green;
+    font-family: inherit;
+    display:block;
+}
+.has-success label{
+    color:green;
+}
+.has-warning .form-control-input{
+    border:1px solid #f0ad4e;
+}
+.has-warning .form-control-feedback-warning{
+    color:#f0ad4e;
+    font-family: inherit;
+    display:block;
+}
+.has-warning label{
+    color:#f0ad4e;
+}
 
 /* Extra Small Devices */
 @media (max-width: 576px) {
