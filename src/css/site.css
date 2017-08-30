@@ -41,6 +41,17 @@ body {
     /* font-size:1.5rem; */
 }
 
+.exp-logo {
+    height: 50px;
+    margin: 14px 0px;
+    /* width:100%; */
+}
+
+.custom-modal {
+    height: 0px;
+    display: none;
+}
+
 .img-container {
     position: fixed;
     z-index:-1;
@@ -69,6 +80,7 @@ body {
 
 .home-sections {
     font-weight: 900;
+    min-height: 100%;
 }
 
 .home-sections>h1 {
@@ -115,7 +127,7 @@ body {
         width:100%;
         padding: 2rem;
     }
-    .home-section-border:not(:last-child) {
+    .home-section-border:not(:last-of-type) {
         border-right: 4px solid;
     }
     
