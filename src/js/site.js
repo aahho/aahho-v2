@@ -3,18 +3,60 @@ $(document).ready(function () {
         opacity: 1
 	}, 500, 'linear');
 
-    $('.tab-link').on("click",function(){
-    	console.log("work-link is clicked",$(this).text());
-    	var section = 'details-' + $(this).text().toLowerCase();
-    	$('#modal-section').hide( "drop", { direction: "down" }, "fast" );
-    	$('#details-work').hide( "drop", { direction: "down" }, "fast" );
-    	$('#details-tools').hide( "drop", { direction: "down" }, "fast" );
-    	$('#details-team').hide( "drop", { direction: "down" }, "fast" );
-		$('#'+ section).show('scale',{ direction: "right" },400);
-
-	});
+    var oldSection = "#modal-section";
+    $('.tab-link').on("click",_.debounce(function(){
+        console.log("work-link is clicked",$(this).text());
+        var tabLink = $(this).text().toLowerCase();
+        var section = 'details-' + tabLink;
+        $(oldSection).hide("scale", {}, 200, function () {
+            $('#'+section).show( "drop", { from: {width: 300} }, 200);
+            oldSection = '#details-' + tabLink;
+            console.log(oldSection);
+        });
+    }, 100));
+    
+    $(".close-modal").on("click", function () {
+        $(oldSection).hide("drop", {}, 200, function () {
+            $("#modal-section").show("scale", {}, 200);
+            oldSection = "#modal-section";
+        });
+    })
 	
 	$(".abtn-home").fitText();
+
+    //form validation
+    $('#contactName').keyup(function(){
+        var data = $(this).val();
+        console.log(data);
+        if(data.length > 2){
+            $(this).parent('div').removeClass('has-warning').addClass('has-success');
+        }
+        else{
+            $(this).parent('div').removeClass('has-success').addClass('has-warning');
+        }    
+    });
+    var pattern =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+
+    $('#contactEmail').keyup(function(e){
+        var data = $('#contactEmail').val().trim();
+        console.log(data);
+        if(data.match(pattern)){
+            $(this).parent('div').removeClass('has-warning').addClass('has-success');
+        }
+        else{
+            $(this).parent('div').removeClass('has-success').addClass('has-warning');
+        }    
+    });
+    $('#contactPhone').keyup(function(e){
+        var data = $('#contactPhone').val().trim();
+        console.log(data);
+        if(data.length > 9){
+            $(this).parent('div').removeClass('has-warning').addClass('has-success');
+        }
+        else{
+            $(this).parent('div').removeClass('has-success').addClass('has-warning');
+        }    
+    });
 });
 
 /*global jQuery */
@@ -63,6 +105,7 @@ $(document).ready(function () {
 
 (function () {
 
+    var pattern =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
     // Initializing Firebase
     const config = {
         apiKey: "AIzaSyDXEqSlclCTKIMSvlyGvYTXd2v2Na1Hj8w",
@@ -90,9 +133,7 @@ $(document).ready(function () {
         "hideEasing": "linear",
         "showMethod": "fadeIn",
         "hideMethod": "fadeOut"
-      }
-
-    const btnContact = document.getElementById('btnContact');
+    }
 
     firebase.auth().signInAnonymously().catch(function(error) {
       var errorCode = error.code;
@@ -110,27 +151,31 @@ $(document).ready(function () {
     });
 
     // Adding Contact Event
-    if (btnContact) {
-        btnContact.addEventListener('click', e => {
-            console.log("came inside");
-            var ref = firebase.database().ref('/website/contacts');
-            
-            const name = document.getElementById('contactName').value;
-            const email = document.getElementById('contactEmail').value;
-            const phone = document.getElementById('contactPhone').value;
-            console.log(name, email, phone);
-            var object =  {
-                'contactName' : name,
-                'contactEmail' : email,
-                'contactPhone' : phone
-            }
+    var contactForm = $("#cform");
+    contactForm.submit(function (ev) {
+        ev.preventDefault();
+        var ref = firebase.database().ref('/website/contacts');
+        
+        const name = document.getElementById('contactName').value;
+        const email = document.getElementById('contactEmail').value;
+        const phone = document.getElementById('contactPhone').value;
+        console.log(name, email, phone);
+        var object =  {
+            'contactName' : name,
+            'contactEmail' : email,
+            'contactPhone' : phone
+        }
+        if(object.contactName.length > 2 && object.contactEmail.match(pattern) && object.contactPhone.length > 9){
             console.log('object'+object);
             const promise = ref.push(object);
             promise.catch(e => console.log(e.message));
             promise.then(function() {
-              window.location.reload();
+                //$('#contactModal').modal('toggle');  
+                //window.location.reload();
+                toastr.success("Thank you for contacting us. We'll get back to you shortly");
             })
             console.log('created or pushed');
-        });
-    }
+        }
+    });
+
 }());
