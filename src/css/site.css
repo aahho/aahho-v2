@@ -61,9 +61,16 @@ footer {
 
 .close-modal {
     position: absolute;
-    top:10px;
-    right:10px;
+    top: 10px;
+    right: 10px;
+    font-size: 22px;
+    font-family: cursive;
     cursor: pointer;
+    padding: 2px 10px;
+}
+.close-modal:active{
+       background: rgba(0, 0, 0, 0.13);
+    border-radius: 50%;
 }
 
 .img-container {
@@ -152,9 +159,19 @@ footer {
         display: none;
     }
     .custom-modal {
-        top: -302px;
         width: 100%;
+        display:block;
+        box-shadow: none;
+        height:auto;
+        border-bottom: 4px solid;
     }
+    .abtn-home{
+        cursor:normal;
+    }
+    #modal-section{
+        padding:0px;
+    }
+
 }
 
 /* Small Devices */
@@ -172,8 +189,17 @@ footer {
         display: none;
     }
     .custom-modal {
-        top: -302px;
         width: 100%;
+        display:block;
+        box-shadow: none;
+        height:auto;
+        border-bottom: 4px solid;
+    }
+    .abtn-home{
+        cursor:normal;
+    }
+    #modal-section{
+        padding:0px;
     }
 }
 
@@ -194,6 +220,10 @@ footer {
     .custom-modal {
         top: -302px;
         width: 100%;
+    }
+    .abtn-home-1{
+        font-size: 40px !important;
+        padding: 0px 15px;
     }
     
 }
@@ -218,6 +248,10 @@ footer {
     .custom-modal {
         width: 66%;
     }
+    .abtn-home-1{
+        font-size: 40px !important;
+        padding: 0px 15px;
+    }
 }
 
 /* Large Devices */
@@ -238,5 +272,9 @@ footer {
     }
     .hidden-lg-p {
         display: none;
+    }
+    .abtn-home-1{
+        font-size: 40px !important;
+        padding: 0px 15px;
     }
 }
