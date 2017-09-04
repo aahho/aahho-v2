@@ -52,7 +52,7 @@ footer {
 }
 
 .custom-modal {
-    height: 100%;
+    height: 480px;
     display: none;
     /*box-shadow: 0px 0px 10px 1px #dcdcdc;*/
     position: relative;
@@ -95,16 +95,16 @@ footer {
 }
 
 .team-img {
-    padding: 0px;
+    padding: 12px 12px 0px 12px;
     position: relative;
     overflow:hidden;
 }
 
 .person-details {
     position:absolute;
-    top:150px;
-    right:0px;
-    left:0px;
+    top:100px;
+    right:10px;
+    left:10px;
     bottom:0px;
     background: rgba(1, 1, 1, 0.85);
     padding: 10px;
@@ -196,6 +196,9 @@ footer {
     .close-modal {
         display: none;
     }
+    .person-details {
+        top: 200px;
+    }
 
 }
 
@@ -216,7 +219,6 @@ footer {
     .custom-modal {
         width: 100%;
         display:block;
-        box-shadow: none;
         height:auto;
         border-bottom: 4px solid;
     }
@@ -225,6 +227,9 @@ footer {
     }
     .close-modal {
         display: none;
+    }
+    .person-details {
+        top: 120px;
     }
 }
 
@@ -247,31 +252,35 @@ footer {
         display: none;
     }
     .custom-modal {
-        top: -302px;
+        /*top: -302px;*/
         width: 100%;
     }
     .abtn-home-1{
         font-size: 40px !important;
         padding: 0px 15px;
     }
+    .person-details {
+        top: 200px;
+    }
     
 }
 
 /* Large Devices */
-@media (min-width: 992px) and (orientation:landscape) { 
+@media (min-width: 992px) { 
     .home-content {
-        height: 85vh;
+        /*height: 85vh;*/
         /* width:100%; */
         padding: 2rem;
     }
     .home-section-border {
         border-right: 4px solid;
     }
-    .home-sections {
-        min-height: 100%;
-    }
     .hidden-lg-l {
         display: none;
+    }
+
+    .home-sections {
+        height: 480px;
     }
 
     .custom-modal {
@@ -284,14 +293,14 @@ footer {
 }
 
 /* Large Devices */
-@media (min-width: 992px) and (orientation:portrait) { 
+/*@media (min-width: 992px) and (orientation:portrait) { 
     .col-lg-4 {
         -ms-flex: 0 0 100%;
             flex: 0 0 100%;
         max-width: 100%;
     }
     .home-content {
-        /* height: 80%; */
+        /* height: 80%; /
         width:100%;
         padding: 2rem;
     }
@@ -306,4 +315,4 @@ footer {
         font-size: 40px !important;
         padding: 0px 15px;
     }
-}
+}*/
