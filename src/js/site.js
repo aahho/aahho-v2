@@ -3,12 +3,19 @@ $(document).ready(function () {
         opacity: 1
 	}, 500, 'linear');
 
-    var oldSection = "#modal-section";
+    var oldSection = ".modal-section";
+    var windowWidth = $(window).width();
+
+    if(windowWidth < 577) {
+        oldSection = undefined;
+    }
+
     $('.tab-link').on("click",_.debounce(function(){
         console.log("work-link is clicked",$(this).text());
         var tabLink = $(this).text().toLowerCase();
         var section = 'details-' + tabLink;
-        $(oldSection).hide("scale", {}, 200, function () {
+
+        $(oldSection).hide("drop", {}, 200, function () {
             $('#'+section).show( "drop", { from: {width: 300} }, 200);
             oldSection = '#details-' + tabLink;
             console.log(oldSection);
@@ -17,12 +24,28 @@ $(document).ready(function () {
     
     $(".close-modal").on("click", function () {
         $(oldSection).hide("drop", {}, 200, function () {
-            $("#modal-section").show("scale", {}, 200);
-            oldSection = "#modal-section";
+            $(".modal-section").show("drop", {}, 200);
+            if(windowWidth < 577) {
+                oldSection = undefined;
+            } else {
+                oldSection = ".modal-section";
+            }
         });
-    })
+    });
+
+    $(".team-img").hover(function () {
+        console.log("team img hover in");
+        var img = $(this).children(".img-fluid");
+        var detailsDiv = img.attr("alt");
+        $("#"+detailsDiv).show("drop",{direction:"down"}, 200);
+    }, function () {
+        console.log("team img hover out");
+        var img = $(this).children(".img-fluid");
+        var detailsDiv = img.attr("alt");
+        $("#"+detailsDiv).hide("drop",{direction: "down"}, 200);
+    });
 	
-	$(".abtn-home").fitText();
+	// $(".abtn-home").fitText();
 
     //form validation
     $('#contactName').keyup(function(){

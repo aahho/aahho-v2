@@ -17,90 +17,137 @@
             </center>  
         </header>
         <!-- <div class="img-container"></div> -->
-        <div id="siteBody" class="site-body container-fluid">
+        <div id="siteBody" class="site-body container">
                 
             <div class="row home-content">
-                <div id="tab-section" class="col-lg-4 col-md-6 col-sm-12 col-xs-12 home-sections home-section-border hidden-sm hidden-xs">
-                    <p class="abtn-home tab-link">WORK</p>
-                    <p class="abtn-home tab-link">TOOLS</p>
-                    <p class="abtn-home tab-link">TEAM</p>
+                <div id="tab-section" class="col-lg-4 col-md-6 col-sm-12 col-xs-12 home-sections home-section-border">
+                    <div class="row">
+                        <p class="abtn-home tab-link col-lg-12 col-xs-4">WORK</p>
+                        <p class="abtn-home tab-link col-lg-12 col-xs-4">TOOLS</p>
+                        <p class="abtn-home tab-link col-lg-12 col-xs-4">TEAM</p>
+                    </div>
                 </div>
                 <div id="details-work" class="custom-modal">
-                    <p class="abtn-home abtn-home-1">WORK</p>
-                    <span class="close-modal hidden-sm hidden-xs">X</span>
+                    <p class="abtn-home abtn-home-1">Namaste, from aahho</p>
+                    <span class="close-modal hidden-sm hidden-xs">
+                        <img src="./src/img/close.png"/>
+                    </span>
+                    <div class="container">
+                        <p>aahho means pleasant surprise in Sanskrit. We build products to delight and engage you. We believe in community over competitiveness, right over easy, scotch over water, and batman over superman. We are developers, designers & we aahho (see what we did :) ).</p>
+                    </div>
                 </div>
                 <div id="details-tools" class="custom-modal">
                     <p class="abtn-home abtn-home-1">TOOLS</p>
-                    <span class="close-modal  hidden-sm hidden-xs">X</span>
+                    <span class="close-modal  hidden-sm hidden-xs">
+                        <img src="./src/img/close.png"/>
+                    </span>
                 </div>
                 <div id="details-team" class="custom-modal">
                     <p class="abtn-home abtn-home-1">TEAM</p>
-                    <span class="close-modal  hidden-sm hidden-xs">X</span>
-                </div>
-                <div id="modal-section" class="col-lg-8 col-md-6 col-sm-12 col-xs-12">
+                    <span class="close-modal  hidden-sm hidden-xs">
+                        <img src="./src/img/close.png"/>
+                    </span>
                     <div class="row">
-                        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 home-sections home-section-border">
-                            <p class="abtn-home">EXPERIENCE</p>
-                            <div class="col-lg-12">
-                                <div class="row">
-                                    <div class="col-lg-6 text-center">
-                                        <img class="exp-logo" src="./src/img/exp/2.png"/>
-                                    </div>
-                                    <div class="col-lg-6 text-center">
-                                        <img class="exp-logo" src="./src/img/exp/4.png"/>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-4 text-center">
-                                        <img class="exp-logo" src="./src/img/exp/mid-2.png"/>
-                                    </div>
-                                    <div class="col-lg-4 text-center">
-                                        <img class="exp-logo" src="./src/img/exp/mid-1.png"/>
-                                    </div>
-                                    <div class="col-lg-4 text-center">
-                                        <img class="exp-logo" src="./src/img/exp/mid-3.png"/>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-4 text-center">
-                                        <img class="exp-logo" src="./src/img/exp/3.png"/>
-                                    </div>
-                                    <div class="col-lg-4 text-center">
-                                        <img class="exp-logo" src="./src/img/exp/5.png"/>
-                                    </div>
-                                    <div class="col-lg-4 text-center">
-                                        <img class="exp-logo" src="./src/img/exp/1.png"/>
-                                    </div>
-                                </div>
+                        <div class="team-img col-lg-4 col-md-6 col-sm-6">
+                            <img alt="zoidberg" class="img-fluid" src="./src/img/team/zoidberg.png"/>
+                            <div class="person-details" id="zoidberg">
+                                <p><span><b>Name</b></span>: Pappu</p>
+                                <p>Expertize: Your frontend guy</p>
                             </div>
                         </div>
-                        <div id="contact-section" class="col-lg-6 col-md-12 col-sm-12 col-xs-12 home-sections">
-                            <p class="abtn-home">CONTACT</p>
-                            <form id="cform" name="contact-form">
-                                <div class="form-group">
-                                    <label for="contactName">Name</label>
-                                    <input type="text" class="form-control form-control-input" id="contactName" placeholder="Enter name" />
-                                    <small class="form-control-feedback-warning">Minimum 3 characters required!</small>
-                                    <!-- <small class="form-control-feedback-success">Success! You've done it.</small> -->
-                                </div>
-                                <div class="form-group">
-                                    <label for="contactEmail">Email</label>
-                                    <input type="email" class="form-control form-control-input" id="contactEmail" aria-describedby="emailHelp" placeholder="Enter email">
-                                    <small class="form-control-feedback-warning">Enter valid email!</small>
-                                    <!-- <small class="form-control-feedback-success">Success! You've done it.</small> -->
-                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                                </div>
-                                <div class="form-group">
-                                    <label for="contactPhone">Phone</label>
-                                    <input type="text" class="form-control form-control-input" id="contactPhone" placeholder="Enter phone number..">
-                                    <small class="form-control-feedback-warning">Minimum 10 characters is required</small>
-                                    <!-- <small class="form-control-feedback-success">Success! You've done it.</small> -->
-                                </div>
-                                <button type="submit" id="btnContact" class="btn btn-primary">Submit</button>
-                            </form>
+                        <div class="team-img col-lg-4 col-md-6 col-sm-6">
+                            <img alt="bpappu" class="img-fluid" src="./src/img/team/bpappu.png"
+                            />
+                            <div class="person-details" id="bpappu">
+                                <p><span><b>Name</b></span>: Pappu</p>
+                                <p>Expertize: Your frontend guy</p>
+                            </div>
+                        </div>
+                        <div class="team-img col-lg-4 col-md-6 col-sm-6">
+                            <img alt="snow" class="img-fluid" src="./src/img/team/snow.png"/>
+                            <div class="person-details" id="snow">
+                                <p><span><b>Name</b></span>: Pappu</p>
+                                <p>Expertize: Your frontend guy</p>
+                            </div>
+                        </div>
+                        <div class="team-img col-lg-4 col-md-6 col-sm-6">
+                            <img alt="killer" class="img-fluid" src="./src/img/team/killer.png"/>
+                            <div class="person-details" id="killer">
+                                <p><span><b>Name</b></span>: Pappu</p>
+                                <p>Expertize: Your frontend guy</p>
+                            </div>
+                        </div>
+                        <div class="team-img col-lg-4 col-md-6 col-sm-6">
+                            <img alt="tanzo" class="img-fluid" src="./src/img/team/tanzo.png"/>
+                            <div class="person-details" id="tanzo">
+                                <p><span><b>Name</b></span>: Pappu</p>
+                                <p>Expertize: Your frontend guy</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!-- <div id="modal-section" class="col-lg-8 col-md-6 col-sm-12 col-xs-12"> -->
+                    <!-- <div class="row"> -->
+                <div class="modal-section col-lg-4 col-md-6 col-sm-12 col-xs-12 home-sections home-section-border no-border">
+                    <p class="abtn-home">EXPERIENCE</p>
+                    <div class="row">
+                        <div class="col-lg-6 text-center col-md-6">
+                            <img class="exp-logo" src="./src/img/exp/2.png"/>
+                        </div>
+                        <div class="col-lg-6 text-center col-md-6">
+                            <img class="exp-logo" src="./src/img/exp/4.png"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 text-center col-md-4">
+                            <img class="exp-logo" src="./src/img/exp/mid-2.png"/>
+                        </div>
+                        <div class="col-lg-4 text-center col-md-4">
+                            <img class="exp-logo" src="./src/img/exp/mid-1.png"/>
+                        </div>
+                        <div class="col-lg-4 text-center col-md-4">
+                            <img class="exp-logo" src="./src/img/exp/mid-3.png"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 text-center col-md-4">
+                            <img class="exp-logo" src="./src/img/exp/3.png"/>
+                        </div>
+                        <div class="col-lg-4 text-center col-md-4">
+                            <img class="exp-logo" src="./src/img/exp/5.png"/>
+                        </div>
+                        <div class="col-lg-4 text-center col-md-4">
+                            <img class="exp-logo" src="./src/img/exp/1.png"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-section col-lg-4 col-md-12 col-sm-12 col-xs-12 home-sections">
+                    <p class="abtn-home">CONTACT</p>
+                    <form id="cform" name="contact-form">
+                        <div class="form-group">
+                            <label for="contactName">Name</label>
+                            <input type="text" class="form-control form-control-input" id="contactName" placeholder="Enter name" />
+                            <small class="form-control-feedback-warning">Minimum 3 characters required!</small>
+                            <!-- <small class="form-control-feedback-success">Success! You've done it.</small> -->
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Email</label>
+                            <input type="email" class="form-control form-control-input" id="contactEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                            <small class="form-control-feedback-warning">Enter valid email!</small>
+                            <!-- <small class="form-control-feedback-success">Success! You've done it.</small> -->
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactPhone">Phone</label>
+                            <input type="text" class="form-control form-control-input" id="contactPhone" placeholder="Enter phone number..">
+                            <small class="form-control-feedback-warning">Minimum 10 characters is required</small>
+                            <!-- <small class="form-control-feedback-success">Success! You've done it.</small> -->
+                        </div>
+                        <button type="submit" id="btnContact" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+                    <!-- </div> -->
+                <!-- </div> -->
             </div>
             <div class="footer">
                 <center>
