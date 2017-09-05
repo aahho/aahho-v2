@@ -37,12 +37,12 @@ $(document).ready(function () {
         console.log("team img hover in");
         var img = $(this).children(".img-fluid");
         var detailsDiv = img.attr("alt");
-        $("#"+detailsDiv).show("drop",{direction:"down"}, 200);
+        $("#"+detailsDiv).show("drop",{direction:"down"}, 400);
     }, function () {
         console.log("team img hover out");
         var img = $(this).children(".img-fluid");
         var detailsDiv = img.attr("alt");
-        $("#"+detailsDiv).hide("drop",{direction: "down"}, 200);
+        $("#"+detailsDiv).hide("drop",{direction: "down"}, 400);
     });
 	
 	// $(".abtn-home").fitText();
