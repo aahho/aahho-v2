@@ -6,6 +6,10 @@ $(document).ready(function () {
     var oldSection = ".modal-section";
     var windowWidth = $(window).width();
 
+    $(window).resize(function () {
+        windowWidth = $(window).width();
+    });
+
     if(windowWidth < 577) {
         oldSection = undefined;
     }
@@ -15,30 +19,45 @@ $(document).ready(function () {
         var tabLink = $(this).text().toLowerCase();
         var section = 'details-' + tabLink;
 
-        $(oldSection).hide("drop", {}, 200, function () {
-            $('#'+section).show( "drop", { from: {width: 300} }, 200);
-            oldSection = '#details-' + tabLink;
-            console.log(oldSection);
+        $(oldSection).hide("slide", {direction: "left"}, 200, function () {
+            if(windowWidth < 768 || windowWidth >= 992) {
+                $('#'+section).show( "slide", { direction: "right" }, 200);
+                oldSection = '#details-' + tabLink;
+                console.log(oldSection);
+            }
         });
+
+        if(windowWidth >= 768 && windowWidth < 992) {
+            $("#tab-section").hide("slide", {direction: "left"}, 200, function () {
+                $('#'+section).show( "slide", { direction: "right" }, 200);
+                oldSection = '#details-' + tabLink;
+            });
+        }
     }, 100));
     
     $(".close-modal").on("click", function () {
-        $(oldSection).hide("drop", {}, 200, function () {
-            $(".modal-section").show("drop", {}, 200);
+        $(oldSection).hide("slide", {direction: "left"}, 200, function () {
+            $(".modal-section").show("slide", {direction: "right"}, 200);
             if(windowWidth < 577) {
                 oldSection = undefined;
             } else {
                 oldSection = ".modal-section";
             }
         });
+        if(windowWidth >= 768 && windowWidth < 992) {
+            $("#tab-section").show("slide", {direction: "right"}, 200)
+        }
     });
 
-    $(".team-img").hover(function () {
+    $(".team-img").hover(_.debounce(function () {
         console.log("team img hover in");
         var img = $(this).children(".img-fluid");
         var detailsDiv = img.attr("alt");
-        $("#"+detailsDiv).show("drop",{direction:"down"}, 400);
-    }, function () {
+        $("#"+detailsDiv).show("drop",{direction:"down"}, 200);
+        window.setTimeout(function () {
+            $("#"+detailsDiv).hide("drop",{direction: "down"}, 200);
+        }, 2000);
+    }, 50), function () {
         console.log("team img hover out");
         var img = $(this).children(".img-fluid");
         var detailsDiv = img.attr("alt");
