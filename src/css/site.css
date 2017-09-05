@@ -67,6 +67,7 @@ footer {
     right: 100px;
     cursor: pointer;
     padding: 5px;
+    z-index: 9;
 }
 .close-modal>img {
     height: 20px;
@@ -177,17 +178,18 @@ footer {
     }
     .home-section-border {
         /* border-top: 4px solid; */
-        border-bottom: 4px solid;
+        border-bottom: 2px solid;
     }
     .hidden-xs {
         display: none;
     }
     .custom-modal {
         width: 100%;
-        display:block;
+        display:block !important;
         box-shadow: none;
         height:auto;
-        border-bottom: 4px solid;
+        border-bottom: 2px solid;
+        padding:0px;
     }
     .abtn-home{
         /*cursor:normal;*/
@@ -198,6 +200,9 @@ footer {
     }
     .person-details {
         top: 200px;
+    }
+    .modal-section {
+        padding:0px;
     }
 
 }
@@ -211,16 +216,17 @@ footer {
     }
     .home-section-border {
         /* border-top: 4px solid; */
-        border-bottom: 4px solid;
+        border-bottom: 2px solid;
     }
     .hidden-sm {
         display: none;
     }
     .custom-modal {
         width: 100%;
-        display:block;
+        display:block !important;
         height:auto;
-        border-bottom: 4px solid;
+        border-bottom: 2px solid;
+        padding:0px;
     }
     .abtn-home{
         cursor:normal;
@@ -230,6 +236,9 @@ footer {
     }
     .person-details {
         top: 120px;
+    }
+    .modal-section {
+        padding:0px;
     }
 }
 

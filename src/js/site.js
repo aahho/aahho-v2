@@ -6,6 +6,10 @@ $(document).ready(function () {
     var oldSection = ".modal-section";
     var windowWidth = $(window).width();
 
+    $(window).resize(function () {
+        windowWidth = $(window).width();
+    });
+
     if(windowWidth < 577) {
         oldSection = undefined;
     }
