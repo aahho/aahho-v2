@@ -54,6 +54,9 @@ $(document).ready(function () {
         var img = $(this).children(".img-fluid");
         var detailsDiv = img.attr("alt");
         $("#"+detailsDiv).show("drop",{direction:"down"}, 200);
+        window.setTimeout(function () {
+            $("#"+detailsDiv).hide("drop",{direction: "down"}, 200);
+        }, 2000);
     }, 50), function () {
         console.log("team img hover out");
         var img = $(this).children(".img-fluid");

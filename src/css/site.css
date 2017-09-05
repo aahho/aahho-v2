@@ -56,7 +56,7 @@ footer {
     display: none;
     /*box-shadow: 0px 0px 10px 1px #dcdcdc;*/
     position: relative;
-    background: #f9f9f9;
+    background: transparent;
     padding: 0px 15px;
     overflow-y: auto;
 }
