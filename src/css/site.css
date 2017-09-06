@@ -37,7 +37,7 @@ footer {
 }
 
 .site-body {
-    padding: 12px 0;
+    /*padding: 12px 0;*/
     opacity: 0;
 }
 .header-text ,.bottom-text{
@@ -52,9 +52,16 @@ header{
 }
 
 .exp-logo {
-    height: 2.5rem;
+    height: 3.5rem;
     margin: 14px 0px;
+    -webkit-filter: grayscale(100%);
+    opacity: 0.4;
     /* width:100%; */
+}
+
+.exp-logo:hover {
+    -webkit-filter: grayscale(0%);
+    opacity: 1;
 }
 
 .custom-modal {
@@ -197,7 +204,7 @@ header{
     .home-content {
         /* height: 80%; */
         width:100%;
-        padding: 2rem;
+        /*padding: 2rem;*/
     }
     .home-section-border {
         /* border-top: 4px solid; */
@@ -212,11 +219,11 @@ header{
         box-shadow: none;
         height:auto;
         border-bottom: 2px solid;
-        padding:0px;
+        padding:10px 0;
     }
     .abtn-home{
         /*cursor:normal;*/
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
     .close-modal {
         display: none;
@@ -225,7 +232,7 @@ header{
         top: 200px;
     }
     .modal-section {
-        padding:0px;
+        padding:10px 0;
     }
 
 }
@@ -316,7 +323,7 @@ header{
     }
 
     .custom-modal {
-        width: 66%;
+        width: 75%;
         height:100%;
     }
     .tab-section{

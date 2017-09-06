@@ -8,6 +8,11 @@ $(document).ready(function () {
 
     $(window).resize(function () {
         windowWidth = $(window).width();
+        if(windowWidth < 577) {
+            oldSection = undefined;
+        } else {
+            oldSection = ".modal-section";
+        }
     });
 
     if(windowWidth < 577) {
